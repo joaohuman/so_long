@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 01:24:28 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/14 03:08:01 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:05:02 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	remove_barn(t_map *map)
 			}
 			j++;
 		}
-		printf("%s\n", map->map[i]);
+		map->backup[i] = ft_strdup(map->map[i]);
+		printf("%s\nisso aí em cima é o backup", map->backup[i]);
 		i++;
 	}
 }

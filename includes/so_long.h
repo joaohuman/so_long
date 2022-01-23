@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 01:39:12 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/20 01:10:09 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 17:58:24 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <sys/stat.h>
 # include "libft.h"
 # include "get_next_line.h"
+# include <mlx.h>
 
 typedef struct s_map {
 	char	*map[100];
@@ -34,8 +35,11 @@ typedef struct s_map {
 	int		count_p;
 	int		count_c;
 	int		count_e;
+	int		count_mov;
 	void	*win_ptr;
 	void	*mlx_ptr;
+	int		player_col;
+	int		player_line;
 }	t_map;
 
 int		main(int argc, char **argv);
@@ -46,4 +50,12 @@ void	free_mallocs(t_map *map);
 void	check_map(t_map *map);
 void	remove_barn(t_map *map);
 void	free_exit(t_map *map);
+void	handler_map(t_map *map);
+int		player_move(int key_code, t_map *map);
+void	move_up(t_map *map);
+void	move_down(t_map *map);
+void	move_left(t_map *map);
+void	move_right(t_map *map);
+void	walk(t_map *map, char direction, int line, int col);
+
 #endif

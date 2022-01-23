@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   handler_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 18:29:03 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 06:49:56 by jvictor-         ###   ########.fr       */
+/*   Created: 2022/01/22 15:50:59 by jvictor-          #+#    #+#             */
+/*   Updated: 2022/01/23 16:47:47 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_args(int argc, char **argv)
+int	player_move(int key_code, t_map *map)
 {
-	if (argc != 2)
-	{
-		ft_putstr_fd("ERROR\nInvalid number of argument\n", 1);
-		exit (0);
-	}
-	if (ft_strlen(argv[1]) <= 5)
-	{
-		ft_putstr_fd("ERROR\nInvalid argument\n", 1);
-		exit (0);
-	}
-	if (ft_strnstr(argv[1], ".ber", 4))
-	{
-		ft_putstr_fd("ERROR\nThe argument must be of type \".ber\"\n", 1);
-		exit (0);
-	}
+	if (key_code == 'w' || key_code == 0xff52)
+		move_up(map);
+	else if (key_code == 's' || key_code == 0xff54)
+		move_down(map);
+	else if (key_code == 'd' || key_code == 0xff53)
+		move_right(map);
+	else if (key_code == 'a' || key_code == 0xff51)
+		move_left(map);
+}
+
+void	handler_map(t_map *map)
+{
+	mlx_hook(map->mlx_ptr, 2, 1L << 0, player_move, map);
 }

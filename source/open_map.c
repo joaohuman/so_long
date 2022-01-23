@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 00:54:54 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/18 02:08:29 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:05:09 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	open_map(t_map *map, char *path_game)
 	while (validator)
 	{
 		map->map[i] = get_next_line(map->fd);
-		map->backup[i] = ft_strdup(map->map[i]);
 		if (map->map[i] == NULL)
 			validator = 0;
 		i++;

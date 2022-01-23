@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 01:25:01 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/20 01:04:16 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:29:48 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static void	verify_pce(t_map *map)
 	int	i;
 	int	j;
 
-	i = 0;
-	while (map->map[i] != NULL)
+	i = -1;
+	while (map->map[++i] != NULL)
 	{
 		j = 0;
 		while (map->map[i][j] != '\0')
@@ -66,10 +66,14 @@ static void	verify_pce(t_map *map)
 				ft_putstr_fd("ERROR\nInvalid characters in the map\n", 1);
 				free_exit(map);
 			}
+			if (map->map[i][j] == 'P')
+			{
+				map->player_line = i;
+				map->player_col = j;
+			}
 			count_pce(map, i, j);
 			j++;
 		}
-		i++;
 	}
 }
 

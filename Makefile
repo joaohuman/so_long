@@ -6,7 +6,7 @@
 #    By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 00:20:42 by jvictor-          #+#    #+#              #
-#    Updated: 2022/01/20 01:03:16 by jvictor-         ###   ########.fr        #
+#    Updated: 2022/01/22 17:54:43 by jvictor-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRC_FILES = main.c \
 			free_mallocs.c \
 			check_map.c \
 			remove_barn.c \
-			free_exit.c
+			free_exit.c \
+			handler_map.c \
+			movements.c
 			
 SRC_DIR = ./source
 MLX_DIR = ./minilibx-linux/
