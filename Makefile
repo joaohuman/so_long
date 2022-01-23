@@ -6,7 +6,7 @@
 #    By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 00:20:42 by jvictor-          #+#    #+#              #
-#    Updated: 2022/01/22 17:54:43 by jvictor-         ###   ########.fr        #
+#    Updated: 2022/01/23 22:05:38 by jvictor-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_FILES = main.c \
 SRC_DIR = ./source
 MLX_DIR = ./minilibx-linux/
 MLX = ./minilibx-linux/libmlx.a
-CFLAGS = -g3 -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -g3 -Wall -Wextra -Werror# -fsanitize=address
 CC = clang
 LIBS_FLAGS = -lmlx -Ilmlx -lXext -lX11
 OBJECT = $(addprefix $(OBJECT_DIR)/,$(subst .c,.o,$(SRC_FILES)))
@@ -40,7 +40,7 @@ NAME = so_long
 all:	$(NAME)
 
 $(NAME):	$(MLX) $(OBJECT) $(LIBFT)
-		$(CC) $(CFLAGS) -g $(OBJECT) -L $(MLX_DIR) $(LIBFT) $(LIBS_FLAGS) $(MLX) -o $(NAME)
+		$(CC) $(CFLAGS) -g -I $(INCLUDES) $(OBJECT) -L $(MLX_DIR) $(LIBFT) $(LIBS_FLAGS) $(MLX) -o $(NAME) 
 
 $(OBJECT_DIR)/%.o:	$(SRC_DIR)/%.c
 		$(MAKE_DIR) $(OBJECT_DIR)

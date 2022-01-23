@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 02:08:25 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 06:56:57 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 21:27:27 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	remove_barn(&map);
 	check_map(&map);
 	map.mlx_ptr = mlx_init();
+	map.win_ptr = mlx_new_window(map.mlx_ptr, 500, 500, "O que eu quiser");
 	handler_map(&map);
 	free_mallocs(&map);
 }

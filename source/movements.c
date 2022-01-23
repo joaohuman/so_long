@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:51:01 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 18:20:09 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 20:09:28 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,26 +88,26 @@ void	walk(t_map *map, char direction, int line, int col)
 {
 	if (direction == 'u')
 	{
-		map->map[line - 1][col] == 'P';
-		map->map[line][col] == '0';
+		map->map[line - 1][col] = 'P';
+		map->map[line][col] = '0';
 		map->player_line -= 1;
 	}
 	else if (direction == 'd')
 	{
-		map->map[line + 1][col] == 'P';
-		map->map[line][col] == '0';
+		map->map[line + 1][col] = 'P';
+		map->map[line][col] = '0';
 		map->player_line += 1;
 	}
 	else if (direction == 'r')
 	{
-		map->map[line][col + 1] == 'P';
-		map->map[line][col] == '0';
+		map->map[line][col + 1] = 'P';
+		map->map[line][col] = '0';
 		map->player_col += 1;
 	}
 	else if (direction == 'l')
 	{
-		map->map[line][col - 1] == 'P';
-		map->map[line][col] == '0';
+		map->map[line][col - 1] = 'P';
+		map->map[line][col] = '0';
 		map->player_col -= 1;
 	}
 	map->count_mov++;

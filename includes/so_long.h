@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 01:39:12 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 17:58:24 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/23 20:05:20 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void	move_down(t_map *map);
 void	move_left(t_map *map);
 void	move_right(t_map *map);
 void	walk(t_map *map, char direction, int line, int col);
+void	printi(t_map *map);
 
 #endif
