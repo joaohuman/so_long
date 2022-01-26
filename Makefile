@@ -6,7 +6,7 @@
 #    By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 00:20:42 by jvictor-          #+#    #+#              #
-#    Updated: 2022/01/23 22:05:38 by jvictor-         ###   ########.fr        #
+#    Updated: 2022/01/24 01:42:28 by jvictor-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,14 @@ SRC_FILES = main.c \
 			remove_barn.c \
 			free_exit.c \
 			handler_map.c \
-			movements.c
-			
+			movements.c \
+			print_images.c \
+			create_images.c
+
 SRC_DIR = ./source
 MLX_DIR = ./minilibx-linux/
 MLX = ./minilibx-linux/libmlx.a
-CFLAGS = -g3 -Wall -Wextra -Werror# -fsanitize=address
+CFLAGS = -g3 -Wall -Wextra -Werror
 CC = clang
 LIBS_FLAGS = -lmlx -Ilmlx -lXext -lX11
 OBJECT = $(addprefix $(OBJECT_DIR)/,$(subst .c,.o,$(SRC_FILES)))

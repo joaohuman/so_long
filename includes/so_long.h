@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 01:39:12 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 20:05:20 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/24 00:36:39 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_map {
 	void	*mlx_ptr;
 	int		player_col;
 	int		player_line;
+	char	*img_wall;
 }	t_map;
 
 int		main(int argc, char **argv);
@@ -58,5 +59,11 @@ void	move_left(t_map *map);
 void	move_right(t_map *map);
 void	walk(t_map *map, char direction, int line, int col);
 void	printi(t_map *map);
+int		print_images(t_map *map);
+void	print_wall(t_map *map, int i, int j);
+void	print_player(t_map *map, int i, int j);
+void	print_exit(t_map *map, int i, int j);
+void	print_collectable(t_map *map, int i, int j);
+void	print_space(t_map *map, int i, int j);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:50:59 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 22:14:16 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/24 01:30:49 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ int	player_move(int key_code, t_map *map)
 		move_right(map);
 	else if (key_code == 'a' || key_code == 0xff51)
 		move_left(map);
-	printi(map);
+	print_images(map);
 	return (0);
 }
 
 void	handler_map(t_map *map)
 {
-	printi(map);
+	mlx_expose_hook(map->win_ptr, print_images, map);
+	print_images(map);
 	mlx_hook(map->win_ptr, 2, 1L << 0, player_move, map);
 	mlx_loop(map->mlx_ptr);
 }
