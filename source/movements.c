@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:51:01 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 20:09:28 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/26 23:44:31 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ void	move_up(t_map *map)
 	{
 		walk(map, 'u', map->player_line, map->player_col);
 	}
+	if (map->mov_up == 1)
+		map->mov_up = 0;
+	else
+		map->mov_up = 1;
+	map->last_movement = 1;
 }
 
 void	move_down(t_map *map)
@@ -46,6 +51,11 @@ void	move_down(t_map *map)
 	{
 		walk(map, 'd', map->player_line, map->player_col);
 	}
+	if (map->mov_down == 1)
+		map->mov_down = 0;
+	else
+		map->mov_down = 1;
+	map->last_movement = 2;
 }
 
 void	move_right(t_map *map)
@@ -64,6 +74,11 @@ void	move_right(t_map *map)
 	{
 		walk(map, 'r', map->player_line, map->player_col);
 	}
+	if (map->mov_right == 1)
+		map->mov_right = 0;
+	else
+		map->mov_right = 1;
+	map->last_movement = 3;
 }
 
 void	move_left(t_map *map)
@@ -82,6 +97,11 @@ void	move_left(t_map *map)
 	{
 		walk(map, 'l', map->player_line, map->player_col);
 	}
+	if (map->mov_left == 1)
+		map->mov_left = 0;
+	else
+		map->mov_left = 1;
+	map->last_movement = 4;
 }
 
 void	walk(t_map *map, char direction, int line, int col)

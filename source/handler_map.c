@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:50:59 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/24 01:30:49 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:56:18 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	player_move(int key_code, t_map *map)
 		move_right(map);
 	else if (key_code == 'a' || key_code == 0xff51)
 		move_left(map);
+	else if (key_code == 0xff1b)
+		free_exit(map);
 	print_images(map);
+	mlx_string_put(map->mlx_ptr, map->win_ptr,
+		10, 20, 0xFFFFFF, ft_itoa(map->count_mov));
 	return (0);
 }
 
@@ -31,18 +35,6 @@ void	handler_map(t_map *map)
 	mlx_expose_hook(map->win_ptr, print_images, map);
 	print_images(map);
 	mlx_hook(map->win_ptr, 2, 1L << 0, player_move, map);
+	mlx_hook(map->win_ptr, 33, 1L << 5, free_mallocs, map);
 	mlx_loop(map->mlx_ptr);
-}
-
-void	printi(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (map->map[i] != NULL)
-	{
-		ft_putendl_fd(map->map[i], 1);
-		i++;
-	}
-	ft_putendl_fd("\n", 1);
 }
