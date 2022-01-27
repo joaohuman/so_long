@@ -6,7 +6,7 @@
 #    By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 00:20:42 by jvictor-          #+#    #+#              #
-#    Updated: 2022/01/24 01:42:28 by jvictor-         ###   ########.fr        #
+#    Updated: 2022/01/27 02:13:58 by jvictor-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC_FILES = main.c \
 SRC_DIR = ./source
 MLX_DIR = ./minilibx-linux/
 MLX = ./minilibx-linux/libmlx.a
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS = -g3 -Wall -Wextra -Werror -fsanitize=address
 CC = clang
 LIBS_FLAGS = -lmlx -Ilmlx -lXext -lX11
 OBJECT = $(addprefix $(OBJECT_DIR)/,$(subst .c,.o,$(SRC_FILES)))
@@ -53,6 +53,9 @@ $(LIBFT):
 
 $(MLX):
 		$(MAKE) -C $(MLX_DIR)
+
+val:
+		valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long maps/pacmap.ber
 
 clean:
 		rm -fr $(OBJECT_DIR)
