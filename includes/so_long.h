@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 01:39:12 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/27 00:52:03 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:18:40 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 
 typedef struct s_map {
 	char	*map[100];
-	char	*backup[100];
 	int		map_height;
 	int		map_width;
 	int		fd;

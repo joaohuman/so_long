@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:50:59 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/27 02:11:45 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:58:51 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	player_move(int key_code, t_map *map)
 		free_exit(map);
 	print_images(map);
 	count_mov = ft_itoa(map->count_mov);
+	ft_putendl_fd(count_mov, 1);
 	mlx_string_put(map->mlx_ptr, map->win_ptr,
 		10, 20, 0xFFFFFF, count_mov);
 	free(count_mov);

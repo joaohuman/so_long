@@ -6,7 +6,7 @@
 #    By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 00:20:42 by jvictor-          #+#    #+#              #
-#    Updated: 2022/01/27 02:13:58 by jvictor-         ###   ########.fr        #
+#    Updated: 2022/01/27 02:40:30 by jvictor-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC_FILES = main.c \
 SRC_DIR = ./source
 MLX_DIR = ./minilibx-linux/
 MLX = ./minilibx-linux/libmlx.a
-CFLAGS = -g3 -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -g3 -Wall -Wextra -Werror #-fsanitize=leak
 CC = clang
 LIBS_FLAGS = -lmlx -Ilmlx -lXext -lX11
 OBJECT = $(addprefix $(OBJECT_DIR)/,$(subst .c,.o,$(SRC_FILES)))

@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:29:03 by jvictor-          #+#    #+#             */
-/*   Updated: 2022/01/23 06:49:56 by jvictor-         ###   ########.fr       */
+/*   Updated: 2022/01/27 20:17:50 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_args(int argc, char **argv)
 		ft_putstr_fd("ERROR\nInvalid number of argument\n", 1);
 		exit (0);
 	}
-	if (ft_strlen(argv[1]) <= 5)
+	if (ft_strlen(argv[1]) <= 4)
 	{
 		ft_putstr_fd("ERROR\nInvalid argument\n", 1);
 		exit (0);
